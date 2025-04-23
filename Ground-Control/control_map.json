@@ -1,0 +1,38 @@
+{
+	"BV-01": {
+		"command_str": "send fc 0",
+		"statefield": "fc_state",
+		"idx": 0},
+	"BV-02": {
+		"command_str": "send fc 1",
+		"statefield": "fc_state",
+		"idx": 1},
+	"BV-03": {
+		"command_str": "send fc 2",
+		"statefield": "fc_state",
+		"idx": 2},
+	"BV-04": {
+		"command_str": "send fc 3",
+		"statefield": "fc_state",
+		"idx": 3},
+	"BV-05": {
+		"command_str": "send fc 4",
+		"statefield": "fc_state",
+		"idx": 4},
+	"BV-06": {
+		"command_str": "send fc 5",
+		"statefield": "fc_state",
+		"idx": 5},
+	"BV-07": {
+		"command_str": "send fc 6",
+		"statefield": "fc_state",
+		"idx": 6},
+	"BV-08": {
+		"command_str": "send fc 7",
+		"statefield": "fc_state",
+		"idx": 7},
+	"arm_fill": {
+		"command_str": "send fc arm",
+		"statefield": "fc_soft_armed",
+		"idx": -1}
+}

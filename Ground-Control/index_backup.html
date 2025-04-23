@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>!-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type='text/javascript' src='app.js'></script>
+    <style>
+        html {
+            font-family: sans-serif;
+            color: white;
+            background-color: black;
+        }
+
+        button {
+            border: 0;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .spacer {
+            visibility: hidden;
+        }
+
+        .column {
+            float:left;
+            width: 15%;
+        }
+    </style>
+    <h1>Pacific Impulse IGS</h1>
+    </head>
+    <body>
+    	<div class="row">
+        <div class="column">
+            <button onclick="commandHandler(this.id);" id="fire" style="background-color:grey">FIRE</button>
+            <button onclick="commandHandler(this.id);" id="arm_launch" style="background-color:grey">Arm Launch</button>
+            <button onclick="commandHandler(this.id);" id="he_dscn" style="background-color:grey">He Disconnect</button>
+            <button onclick="commandHandler(this.id);" id="ox_dscn" style="background-color:grey">Ox Disconnect</button>
+        </div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+            <button onclick="commandHandler(this.id);" id="arm_prop" style="background-color:grey">Arm Propulsion</button>
+            <button onclick="commandHandler(this.id);" id="int_pwr" style="background-color:grey">Internal Pwr</button>
+            
+        </div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+
+			<button onclick="commandHandler(this.id);" id="fuel_vent" style="background-color:grey">Fuel T Vent [FTVV] (FC)</button>
+
+           	<button onclick="commandHandler(this.id);" id="ox_vent" style="background-color:grey">Ox T Vent [OTVV] (PC)</button>
+        </div>
+        <div class="column" style="width: 8%;"><button class="spacer">SPACER</button></div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+            
+            <button onclick="commandHandler(this.id);" id="BV-08" style="background-color:grey">Downstream He Valve [PSMV]</button>
+            <button onclick="commandHandler(this.id);" id="BV-06" style="background-color:grey">Downstream Ox Valve [OSMV]</button>
+        </div>
+        <div class="column">
+            <button onclick="commandHandler(this.id);" id="arm_fill" style="background-color:grey">Arm Fill</button>
+            <button onclick="commandHandler(this.id);" id="BV-07" style="background-color:grey">He Line Vent [PSVV]</button>
+            <button onclick="commandHandler(this.id);" id="BV-05" style="background-color:grey">Ox Line Vent [OSVV]</button>
+
+        </div>
+        <div class="column">
+            <button onclick="commandHandler(this.id);" id="BV-03" style="background-color:grey">Upstream CO2 Valve [PLMV]</button>
+            <button onclick="commandHandler(this.id);" id="BV-04" style="background-color:grey">Upstream He Valve [PSPV]</button>
+            <button onclick="commandHandler(this.id);" id="BV-02" style="background-color:grey">--------</button>
+            <button onclick="commandHandler(this.id);" id="BV-01" style="background-color:grey">Upstream Ox Valve [OSPV]</button>
+        </div>
+    </div>
+        <div class="row">
+            <button class="spacer">SPACER</button>
+        </div>
+        <div class="row">
+        <div class="column" style="width: 15%;"><button class="spacer">SPACER</button></div>
+        <div class="column">
+            <label for="pulse_delay" id="curr_delay">Delay: 500 ms</label><br>
+			<input type="number" id="pulse_delay"><br><br>
+			<button onclick="setDelay(this.id);" id="submit_delay" style="background-color:white">Set Delay</button>
+        </div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+
+			<button onclick="commandHandler(this.id);" id="pulse_fuel_vent" style="background-color:grey">Fuel T Vent [FTVV] (FC)</button>
+
+           	<button onclick="commandHandler(this.id);" id="pulse_ox_vent" style="background-color:grey">Ox T Vent [OTVV] (PC)</button>
+        </div>
+        <div class="column" style="width: 8%;"><button class="spacer">SPACER</button></div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+
+            <button onclick="commandHandler(this.id);" id="pulse_BV-08" style="background-color:grey">Downstream He Valve [PSMV]</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-06" style="background-color:grey">Downstream Ox Valve [OSMV]</button>
+        </div>
+        <div class="column">
+            <button class="spacer">SPACER</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-07" style="background-color:grey">He Line Vent [PSVV]</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-05" style="background-color:grey">Ox Line Vent [OSVV]</button>
+
+        </div>
+        <div class="column">
+            <button onclick="commandHandler(this.id);" id="pulse_BV-03" style="background-color:grey">Upstream CO2 Valve [PLMV]</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-04" style="background-color:grey">Upstream He Valve [PSPV]</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-02" style="background-color:grey">--------</button>
+            <button onclick="commandHandler(this.id);" id="pulse_BV-01" style="background-color:grey">Upstream Ox Valve [OSPV]</button>
+        </div>
+    </div>
+    </body>
+</html>

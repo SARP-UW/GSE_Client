@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SARP Open MCT</title>
+    <link rel="shortcut icon" type="image/jpg" href="resource/ACTUAL-SARP-Logo-Circle-1nl4l3g.png"/>
+    <script src="env-config.js"></script>
+    <!-- Uncomment the line below to use latest openMCT from upstream -->
+    <!-- <script src="node_modules/openmct/dist/openmct.js"></script> -->
+    <script src="dist/openmct.js"></script>
+    <script src="sarp/dictionary-plugin.js"></script>
+    <script src="sarp/historical-telem-plugin.js"></script>
+    <script src="sarp/realtime-telem-plugin.js"></script>
+</head>
+<body>
+    <script>
+        // Uncomment the line below to use latest openMCT from upstream
+        // openmct.setAssetPath('node_modules/openmct/dist');
+        openmct.setAssetPath('dist');
+        openmct.install(openmct.plugins.LocalStorage());
+        openmct.install(openmct.plugins.MyItems());
+        openmct.install(openmct.plugins.UTCTimeSystem());
+        openmct.install(openmct.plugins.Espresso());
+        openmct.install(openmct.plugins.SummaryWidget());
+
+        openmct.time.clock('local', {start: -15 * 60 * 1000, end: 0});
+        openmct.time.timeSystem('utc');
+
+        openmct.install(DictionaryPlugin());
+        openmct.install(HistoricalTelemetryPlugin());
+        openmct.install(RealtimeTelemetryPlugin());
+
+        openmct.start();
+    </script>
+</body>
+</html>

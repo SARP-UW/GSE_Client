@@ -1,0 +1,741 @@
+{
+    "name": "Pacific Impulse",
+    "key": "sc",
+    "measurements": [
+        {
+            "name": "FD Temp",
+            "key": "fd_temp",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Alt",
+            "key": "fd_alt",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Ox Pres",
+            "key": "fd_ox_p",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Canister Pres",
+            "key": "fd_av_p",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Fuel Tank Pres",
+            "key": "fd_fuel_p",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD HE Regulated Pres",
+            "key": "fd_he_p",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Ox Tank Pres",
+            "key": "fd_comb_p",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Accel Y",
+            "key": "fd_accel_y",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FD Accel Z",
+            "key": "fd_accel_z",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC CPU Temp",
+            "key": "fc_cpu_temp",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "OX Upstream PT",
+            "key": "fc_adc1_c1",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC ADC 1 Ch 2",
+            "key": "fc_adc1_c2",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "N2 Upstream PT",
+            "key": "fc_adc1_c3",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC ADC 1 Ch 4",
+            "key": "fc_adc1_c4",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "OX Downstream PT",
+            "key": "fc_adc2_c1",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC ADC 2 Ch 2",
+            "key": "fc_adc2_c2",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC ADC 2 Ch 3",
+            "key": "fc_adc2_c3",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "He Downstream PT",
+            "key": "fc_adc2_c4",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 5
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC Software Armed",
+            "key": "fc_soft_armed",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "format": "enum",
+                    "enumerations": [
+                        {
+                            "string": "Software_Armed",
+                            "value": 1
+                        },
+                        {
+                            "string": "Software_Unarmed",
+                            "value": 0
+                        }
+                    ],
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FC Hardware Armed",
+            "key": "fc_hard_armed",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-01",
+            "key": "fc_state_0",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-02",
+            "key": "fc_state_1",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-03",
+            "key": "fc_state_2",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-04",
+            "key": "fc_state_3",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-05",
+            "key": "fc_state_4",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-06",
+            "key": "fc_state_5",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-07",
+            "key": "fc_state_6",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BV-08",
+            "key": "fc_state_7",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "int",
+                    "format": "int",
+                    "min": -1,
+                    "max": 1,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

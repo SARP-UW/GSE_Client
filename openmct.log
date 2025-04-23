@@ -1,0 +1,32 @@
+
+Starting server...
+
+> openmct@0.0.1 start
+> ./env.sh && node server/server.js
+
+node:events:491
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1774:16)
+    at listenInCluster (node:net:1822:12)
+    at Server.listen (node:net:1910:7)
+    at Function.listen (/Users/rtflores/Desktop/launch-ops-final/openMCT/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/rtflores/Desktop/launch-ops-final/openMCT/server/server.js:17:5)
+    at Module._compile (node:internal/modules/cjs/loader:1275:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+    at Module.load (node:internal/modules/cjs/loader:1133:32)
+    at Module._load (node:internal/modules/cjs/loader:972:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1801:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+
+Node.js v19.9.0

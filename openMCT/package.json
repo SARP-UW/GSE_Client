@@ -1,0 +1,18 @@
+{
+  "name": "openmct",
+  "version": "0.0.1",
+  "description": "open MCT for SARP ground control",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "./env.sh && node server/server.js"
+  },
+  "keywords": [],
+  "author": "Jayson Chen",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "openmct": "https://github.com/nasa/openmct.git"
+  }
+}
