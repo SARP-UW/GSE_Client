@@ -9,50 +9,72 @@ let state = {"fc_state":-1, "pc_state":-1, "fc_hard_armed":-1, "fc_soft_armed":-
 let delay = 500
 // !!! switched 1 and 0
 let control_map = {
-	"BV-01": {
-		"command_str": "send fc 0",
-		"statefield": "fc_state",
-		"idx": 0},
-	"BV-02": {
-		"command_str": "send fc 1",
-		"statefield": "fc_state",
-		"idx": 1},
-	"BV-03": {
-		"command_str": "send fc 2",
-		"statefield": "fc_state",
-		"idx": 2},
-	"BV-04": {
-		"command_str": "send fc 3",
-		"statefield": "fc_state",
-		"idx": 3},
-	"BV-05": {
-		"command_str": "send fc 4",
-		"statefield": "fc_state",
-		"idx": 4},
-	"BV-06": {
-		"command_str": "send fc 5",
-		"statefield": "fc_state",
-		"idx": 5},
-	"BV-07": {
-		"command_str": "send fc 6",
-		"statefield": "fc_state",
-		"idx": 6},
-	"BV-08": {
-		"command_str": "send fc 7",
-		"statefield": "fc_state",
-		"idx": 7},
-	"fuel_vent": {
-		"command_str": "send fc 8",
-		"statefield": "fc_state",
-		"idx": 8},
-	"arm_fill": {
-		"command_str": "send fc arm",
-		"statefield": "fc_soft_armed",
+	
+	"fire": {
+		"command_str": "send pc fire 1",
+		"statefield": "fire",
 		"idx": -1},
-	"arm_prop": {
-		"command_str": "send pc arm",
-		"statefield": "pc_soft_armed",
-		"idx": -1},
+	
+	// fill controller
+	
+	// special commands
+	"arm_fill": {"command_str": "send fc arm", /* */ "statefield": "fc_soft_armed", /* */ "idx": -1},
+	
+	// relays 1-10 actuate 
+	"fc_relay_1":  {"command_str": "send fc 0", /* */ "statefield": "fc_state", /* */ "idx": 0},
+	"fc_relay_2":  {"command_str": "send fc 1", /* */ "statefield": "fc_state", /* */ "idx": 1},
+	"fc_relay_3":  {"command_str": "send fc 2", /* */ "statefield": "fc_state", /* */ "idx": 2},
+	"fc_relay_4":  {"command_str": "send fc 3", /* */ "statefield": "fc_state", /* */ "idx": 3},
+	"fc_relay_5":  {"command_str": "send fc 4", /* */ "statefield": "fc_state", /* */ "idx": 4},
+	"fc_relay_6":  {"command_str": "send fc 5", /* */ "statefield": "fc_state", /* */ "idx": 5},
+	"fc_relay_7":  {"command_str": "send fc 6", /* */ "statefield": "fc_state", /* */ "idx": 6},
+	"fc_relay_8":  {"command_str": "send fc 7", /* */ "statefield": "fc_state", /* */ "idx": 7},
+	"fc_relay_9":  {"command_str": "send fc 8", /* */ "statefield": "fc_state", /* */ "idx": 8},
+	"fc_relay_10": {"command_str": "send fc 9", /* */ "statefield": "fc_state", /* */ "idx": 9},
+
+	// relays 1-10 pulse
+	"fc_pulse_relay_1":  {"command_str": "send fc pulse 0", /* */ "statefield": "fc_state", /* */ "idx": 0},
+	"fc_pulse_relay_2":  {"command_str": "send fc pulse 1", /* */ "statefield": "fc_state", /* */ "idx": 1},
+	"fc_pulse_relay_3":  {"command_str": "send fc pulse 2", /* */ "statefield": "fc_state", /* */ "idx": 2},
+	"fc_pulse_relay_4":  {"command_str": "send fc pulse 3", /* */ "statefield": "fc_state", /* */ "idx": 3},
+	"fc_pulse_relay_5":  {"command_str": "send fc pulse 4", /* */ "statefield": "fc_state", /* */ "idx": 4},
+	"fc_pulse_relay_6":  {"command_str": "send fc pulse 5", /* */ "statefield": "fc_state", /* */ "idx": 5},
+	"fc_pulse_relay_7":  {"command_str": "send fc pulse 6", /* */ "statefield": "fc_state", /* */ "idx": 6},
+	"fc_pulse_relay_8":  {"command_str": "send fc pulse 7", /* */ "statefield": "fc_state", /* */ "idx": 7},
+	"fc_pulse_relay_9":  {"command_str": "send fc pulse 8", /* */ "statefield": "fc_state", /* */ "idx": 8},
+	"fc_pulse_relay_10": {"command_str": "send fc pulse 9", /* */ "statefield": "fc_state", /* */ "idx": 9},
+
+	// prop controller
+	
+	// special commands
+	"arm_prop": {"command_str": "send pc arm", /* */ "statefield": "pc_soft_armed", /* */ "idx": -1},
+	
+	// relays 1-10 actuate 
+	"pc_relay_1": 	{"command_str": "send pc 0", /* */ "statefield": "pc_state", /* */ "idx": 0},
+	"pc_relay_2":  {"command_str": "send pc 1", /* */ "statefield": "pc_state", /* */ "idx": 1},
+	"pc_relay_3":  {"command_str": "send pc 2", /* */ "statefield": "pc_state", /* */ "idx": 2},
+	"pc_relay_4":  {"command_str": "send pc 3", /* */ "statefield": "pc_state", /* */ "idx": 3},
+	"pc_relay_5":  {"command_str": "send pc 4", /* */ "statefield": "pc_state", /* */ "idx": 4},
+	"pc_relay_6":  {"command_str": "send pc 5", /* */ "statefield": "pc_state", /* */ "idx": 5},
+	"pc_relay_7":  {"command_str": "send pc 6", /* */ "statefield": "pc_state", /* */ "idx": 6},
+	"pc_relay_8":  {"command_str": "send pc 7", /* */ "statefield": "pc_state", /* */ "idx": 7},
+	"pc_relay_9":  {"command_str": "send pc 8", /* */ "statefield": "pc_state", /* */ "idx": 8},
+	"pc_relay_10": {"command_str": "send pc 9", /* */ "statefield": "pc_state", /* */ "idx": 9},
+
+	// relays 1-10 pulse
+	"pc_pulse_relay_1":  {"command_str": "send pc pulse 0", /* */ "statefield": "pc_state", /* */ "idx": 0},
+	"pc_pulse_relay_2":  {"command_str": "send pc pulse 1", /* */ "statefield": "pc_state", /* */ "idx": 1},
+	"pc_pulse_relay_3":  {"command_str": "send pc pulse 2", /* */ "statefield": "pc_state", /* */ "idx": 2},
+	"pc_pulse_relay_4":  {"command_str": "send pc pulse 3", /* */ "statefield": "pc_state", /* */ "idx": 3},
+	"pc_pulse_relay_5":  {"command_str": "send pc pulse 4", /* */ "statefield": "pc_state", /* */ "idx": 4},
+	"pc_pulse_relay_6":  {"command_str": "send pc pulse 5", /* */ "statefield": "pc_state", /* */ "idx": 5},
+	"pc_pulse_relay_7":  {"command_str": "send pc pulse 6", /* */ "statefield": "pc_state", /* */ "idx": 6},
+	"pc_pulse_relay_8":  {"command_str": "send pc pulse 7", /* */ "statefield": "pc_state", /* */ "idx": 7},
+	"pc_pulse_relay_9":  {"command_str": "send pc pulse 8", /* */ "statefield": "pc_state", /* */ "idx": 8},
+	"pc_pulse_relay_10": {"command_str": "send pc pulse 9", /* */ "statefield": "pc_state", /* */ "idx": 9},
+
+/*
+
 	"int_pwr": {
 		"command_str": "send pc 4",
 		"statefield": "pc_state",
@@ -136,7 +158,7 @@ let control_map = {
 	"pulse_ox_vent": {
 		"command_str": "send pc pulse 2",
 		"statefield": "pc_state",
-		"idx": 2}
+		"idx": 2} */
 };
 				
 
@@ -216,6 +238,38 @@ function setButtonColors() {
 	}
 }
 
+function updateIndicators() {
+    document.querySelectorAll('.status-indicator').forEach(indicator => {
+        const statefield = indicator.dataset.statefield;
+        const idx = parseInt(indicator.dataset.idx);
+        let stateValue = -1;
+
+        // Get state value if available
+        if (state[statefield] && Array.isArray(state[statefield]) && state[statefield].length > idx) {
+            stateValue = state[statefield][idx];
+        }
+
+        // Set status and class
+        let status, statusClass;
+        switch(stateValue) {
+            case 0:
+                status = 'Open';
+                statusClass = 'open';
+                break;
+            case 1:
+                status = 'Closed';
+                statusClass = 'closed';
+                break;
+            default:
+                status = 'Unknown';
+                statusClass = 'unknown';
+        }
+
+        indicator.textContent = status;
+        indicator.className = `status-indicator ${statusClass}`;
+    });
+}
+
 socket.onmessage = function(e) {
 	let data = JSON.parse(e.data);
 	//console.log(data)
@@ -225,6 +279,7 @@ socket.onmessage = function(e) {
 		if (data.hasOwnProperty(EXPECTED_FIELDS[i])) {
 			// Update state if data exists
 			state[EXPECTED_FIELDS[i]] = data[EXPECTED_FIELDS[i]]
+			updateIndicators();
 		}
 		else {
 			// No data for this field exists
@@ -232,6 +287,7 @@ socket.onmessage = function(e) {
 		}
 	}
 	setButtonColors();
+
 	console.log(state);
 };
 

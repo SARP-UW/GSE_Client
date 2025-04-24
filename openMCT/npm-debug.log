@@ -1,6 +1,6 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/Users/rtflores/.nvm/versions/node/v6.17.1/bin/node',
-1 verbose cli   '/Users/rtflores/.nvm/versions/node/v6.17.1/bin/npm',
+1 verbose cli [ '/Users/cooperreynolds/.nvm/versions/node/v6.17.1/bin/node',
+1 verbose cli   '/Users/cooperreynolds/.nvm/versions/node/v6.17.1/bin/npm',
 1 verbose cli   'start' ]
 2 info using npm@3.10.10
 3 info using node@v6.17.1
@@ -9,25 +9,25 @@
 6 silly lifecycle openmct@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle openmct@0.0.1~start: openmct@0.0.1
 8 verbose lifecycle openmct@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle openmct@0.0.1~start: PATH: /Users/rtflores/.nvm/versions/node/v6.17.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/rtflores/Desktop/launch-ops-final/openMCT/node_modules/.bin:/Users/rtflores/Desktop/launch-ops/venv/bin:/Users/rtflores/.nvm/versions/node/v6.17.1/bin:/Users/rtflores/.sdkman/candidates/gradle/current/bin:/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/iTerm.app/Contents/Resources/utilities:/Users/rtflores/.local/bin:/Users/rtflores/Library/Application Support/JetBrains/Toolbox/scripts:/Users/rtflores/.lmstudio/bin
-10 verbose lifecycle openmct@0.0.1~start: CWD: /Users/rtflores/Desktop/launch-ops-final/openMCT
+9 verbose lifecycle openmct@0.0.1~start: PATH: /Users/cooperreynolds/.nvm/versions/node/v6.17.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/cooperreynolds/Documents/SARP/GSE/Ground_Control_Interface/openMCT/node_modules/.bin:/Users/cooperreynolds/Documents/SARP/GSE/Ground_Control_Interface/venv/bin:/Users/cooperreynolds/.nvm/versions/node/v6.17.1/bin:/Users/cooperreynolds/anaconda3/bin:/Users/cooperreynolds/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin
+10 verbose lifecycle openmct@0.0.1~start: CWD: /Users/cooperreynolds/Documents/SARP/GSE/Ground_Control_Interface/openMCT
 11 silly lifecycle openmct@0.0.1~start: Args: [ '-c', './env.sh && node server/server.js' ]
 12 silly lifecycle openmct@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle openmct@0.0.1~start: Failed to exec start script
 14 verbose stack Error: openmct@0.0.1 start: `./env.sh && node server/server.js`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/Users/rtflores/.nvm/versions/node/v6.17.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/Users/cooperreynolds/.nvm/versions/node/v6.17.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/Users/rtflores/.nvm/versions/node/v6.17.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/cooperreynolds/.nvm/versions/node/v6.17.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid openmct@0.0.1
-16 verbose cwd /Users/rtflores/Desktop/launch-ops-final/openMCT
+16 verbose cwd /Users/cooperreynolds/Documents/SARP/GSE/Ground_Control_Interface/openMCT
 17 error Darwin 24.3.0
-18 error argv "/Users/rtflores/.nvm/versions/node/v6.17.1/bin/node" "/Users/rtflores/.nvm/versions/node/v6.17.1/bin/npm" "start"
+18 error argv "/Users/cooperreynolds/.nvm/versions/node/v6.17.1/bin/node" "/Users/cooperreynolds/.nvm/versions/node/v6.17.1/bin/npm" "start"
 19 error node v6.17.1
 20 error npm  v3.10.10
 21 error code ELIFECYCLE

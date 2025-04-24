@@ -6,6 +6,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type='text/javascript' src='app.js'></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         :root {
             --dark-bg: #1a1a1a;
             --accent: #2a9fd6;
@@ -20,8 +24,8 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
         }
 
         header {
@@ -53,16 +57,19 @@
 
         .control-panel {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .button-group {
             background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
         }
 
         .button-group h2 {
@@ -92,28 +99,66 @@
             background: linear-gradient(145deg, #3a3a3a, #303030);
         }
 
+        .status-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            padding: 6px 8px;
+            min-width: 90px;
+            flex: 0 0 90px;
+            
+            margin: 0 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+            background: #dc3545;
+            color: white;
+            border: 2px solid transparent;
+            opacity: 0.9;
+        }
+
+        .status-indicator.open {
+            background: #28a745;
+            border-color: #218838;
+        }
+
+        .status-indicator.closed {
+            background: #ffc107;
+            border-color: #e0a800;
+            color: #000;
+        }
+
+        .status-indicator.unknown {
+            background: #dc3545;
+            border-color: #c82333;
+        }
+
         .valve-row {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 8px 0;
+            gap: 8px;
+            width: 100%;
+            padding: 4px 0;
         }
 
         .valve-label {
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            flex: 0 0 90px; 
+            min-width: 90px;
+            font-size: 0.95em;
         }
-
         .valve-actions {
+            flex: 0 0 172px; 
             display: flex;
             gap: 8px;
         }
 
         .valve-actions button {
             width: 80px;
-            margin: 0;
+            padding: 10px; 
+            font-size: 0.9em; 
         }
 
         .spacer {
@@ -127,86 +172,213 @@
             gap: 30px;
         }
 
+        @media (max-width: 1400px) {
+        .control-panel {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .valve-label {
+            flex: 0 0 80px;
+            min-width: 80px;
+            font-size: 0.9em;
+        }
+        
+        .status-indicator {
+            flex: 0 0 80px;
+            min-width: 80px;
+            font-size: 0.8em;
+        }
+        
+        .valve-actions {
+            flex: 0 0 160px;
+        }
+        
+        .valve-actions button {
+            width: 75px;
+            font-size: 0.85em;
+        }
+    }
+
     </style>
     </head>
     <body>
         <div class="container">
             <header>
-                <img src="https://bpb-us-e1.wpmucdn.com/sites.uw.edu/dist/f/1307/files/2019/04/ACTUAL-SARP-Logo-Circle-1nl4l3g.png" class="logo" alt="SARP Logo">
+                <img src="img/avionics.png" class="logo" alt="SARP Logo">
                 <h1>Domecracker IGS</h1>
             </header>
             <div class="control-panel">
                 <div class="button-group">
                     <h2>System Commands</h2>
-                    <button onclick="commandHandler(this.id)" id="pulse_relay-04" style="background-color: grey">Pulse Relay 4</button>
                     <button onclick="commandHandler(this.id)" id="fire" style="background-color: grey">FIRE</button>
                     <button onclick="commandHandler(this.id)" id="arm_prop" class="arm" style="background-color: grey">Arm Propulsion</button>
                     <button onclick="commandHandler(this.id)" id="arm_fill" class="arm" style="background-color: grey">Arm Fill</button>
                 </div>
 
                 <div class="button-group">
-                    <h2>Valve Controls</h2>
+                    <h2>Fill Control</h2>
                     <div class="valve-row">
-                        <span class="valve-label">Fuel T Vent [FTVV] (FC)</span>
+                        <span class="valve-label">Relay 1</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="0">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="fuel_vent" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_fuel_vent" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_1" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_1" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Ox T Vent [OTVV] (PC)</span>
+                        <span class="valve-label">Relay 2</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="1">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="ox_vent" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_ox_vent" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_2" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_2" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Downstream He Valve [PSMV]</span>
+                        <span class="valve-label">Relay 3</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="2">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-08" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-08" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_3" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_3" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Downstream Ox Valve [OSMV]</span>
+                        <span class="valve-label">Relay 4</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="3">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-06" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-06" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_4" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_4" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">He Line Vent [PSVV]</span>
+                        <span class="valve-label">Relay 5</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="4">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-07" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-07" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_5" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_5" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Ox Line Vent [OSVV]</span>
+                        <span class="valve-label">Relay 6</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="5">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-05" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-05" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_6" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_6" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Upstream CO2 Valve [PLMV]</span>
+                        <span class="valve-label">Relay 7</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="6">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-03" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-03" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_7" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_7" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Upstream He Valve [PSPV]</span>
+                        <span class="valve-label">Relay 8</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="7">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-04" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-04" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_8" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_8" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                     <div class="valve-row">
-                        <span class="valve-label">Upstream Ox Valve [OSPV]</span>
+                        <span class="valve-label">Relay 9</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="8">Unknown</span>
                         <div class="valve-actions">
-                            <button onclick="commandHandler(this.id)" id="BV-01" class="flip-valve" style="background-color: grey">Flip</button>
-                            <button onclick="commandHandler(this.id)" id="pulse_BV-01" class="pulse-valve" style="background-color: grey">Pulse</button>
+                            <button onclick="commandHandler(this.id)" id="fc_relay_9" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_9" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 10</span>
+                        <span class="status-indicator" data-statefield="fc_state" data-idx="9">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="fc_relay_10" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="fc_pulse_relay_10" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <h2>Prop Control</h2>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 1</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="0">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_1" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_1" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 2</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="1">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_2" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_2" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 3</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="2">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_3" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_3" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 4</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="3">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_4" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_4" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 5</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="4">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_5" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_5" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 6</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="5">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_6" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_6" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 7</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="6">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_7" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_7" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 8</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="7">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_8" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_8" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 9</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="8">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_9" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_9" class="pulse-valve" style="background-color: grey">Pulse</button>
+                        </div>
+                    </div>
+                    <div class="valve-row">
+                        <span class="valve-label">Relay 10</span>
+                        <span class="status-indicator" data-statefield="pc_state" data-idx="9">Unknown</span>
+                        <div class="valve-actions">
+                            <button onclick="commandHandler(this.id)" id="pc_relay_10" class="actuate-valve" style="background-color: grey">Actuate</button>
+                            <button onclick="commandHandler(this.id)" id="pc_pulse_relay_10" class="pulse-valve" style="background-color: grey">Pulse</button>
                         </div>
                     </div>
                 </div>
