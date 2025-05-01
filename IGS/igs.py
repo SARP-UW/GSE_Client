@@ -5,6 +5,8 @@ import queue
 import logging
 from resources import Resource
 from websocket_server import WebsocketServer
+from fill_codec import FillTelemCodec
+from prop_codec import PropTelemCodec
 # from sarp_utils.fill_telem_codec import FillTelemCodec
 # from sarp_utils.fill_command_codec import FillCommandCodec
 # from sarp_utils.prop_telem_codec import PropTelemCodec
@@ -194,9 +196,13 @@ if __name__ == "__main__":
     fc_tlm_bind_addr = ('', 30000)
     fd_tlm_bind_addr = ('', 29000)
     resource = Resource()
-    receivers = [TelemetryReceiver(fc_tlm_bind_addr, DataCodec("telemetry"), resource),
+    # receivers = [TelemetryReceiver(fc_tlm_bind_addr, DataCodec("telemetry"), resource),
+    #              TelemetryReceiver(fd_tlm_bind_addr, FlightDataCodec(), resource),
+    #              TelemetryReceiver(pc_tlm_bind_addr, DataCodec("telemetry"), resource)]
+
+    receivers = [TelemetryReceiver(fc_tlm_bind_addr, FillTelemCodec(), resource),
                  TelemetryReceiver(fd_tlm_bind_addr, FlightDataCodec(), resource),
-                 TelemetryReceiver(pc_tlm_bind_addr, DataCodec("telemetry"), resource)]
+                 TelemetryReceiver(pc_tlm_bind_addr, PropTelemCodec(), resource)]
 
     # maps cmd_targets (received via websocket to sendNodes) to a tuple of SendNode, stateID (for pulling status)
     command_map = {"fc": (SendNode(fc_cmd_bind_addr, fc_cmd_addr, DataCodec("command")), "fc_state", "fc_soft_armed", "fc_redlines_armed", "fc_pulse", "fc_pdelay"),
