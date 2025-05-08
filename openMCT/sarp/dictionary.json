@@ -1,7 +1,223 @@
 {
-    "name": "Pacific Impulse",
+    "name": "Domecracker 2",
     "key": "sc",
     "measurements": [
+        {
+            "name": "PC ADC1 C1",
+            "key": "pc_adc1_c1",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC1 C2",
+            "key": "pc_adc1_c2",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC1 C3",
+            "key": "pc_adc1_c3",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC1 C4",
+            "key": "pc_adc1_c4",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC2 C1",
+            "key": "pc_adc2_c1",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC2 C2",
+            "key": "pc_adc2_c2",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC2 C3",
+            "key": "pc_adc2_c3",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PC ADC2 C4",
+            "key": "pc_adc2_c4",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "float",
+                    "format": "float",
+                    "min": -1000,
+                    "max": 1000,
+                    "hints": {
+                        "range": 10
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
         {
             "name": "FD Temp",
             "key": "fd_temp",

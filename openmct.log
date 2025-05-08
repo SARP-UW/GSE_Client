@@ -1,7 +1,7 @@
 
 Starting server...
 
-> openmct@0.0.1 start /Users/cooperreynolds/Documents/SARP/GSE/Ground_Control_Interface/openMCT
+> openmct@0.0.1 start
 > ./env.sh && node server/server.js
 
 OpenMCT hosted at http://localhost:8080
